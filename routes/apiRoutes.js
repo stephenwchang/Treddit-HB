@@ -23,7 +23,7 @@ module.exports = function(app) {
   // render front page
   app.get('/reddit', function(req, res) {
     r.getHot().then(function(result) {
-      res.render("index", {
+      res.render('index', {
         redditHot: result
       });
       console.log(`subreddit: ${result[0].subreddit.display_name}`);
@@ -33,8 +33,23 @@ module.exports = function(app) {
   // render comments
   app.get('/thread/:id', function(req, res) {
     r.getSubmission(req.params.id).comments.then(function(result) {
-      console.log(`comments: ${result}`);
-      res.json(result);
+      r.getSubmission(req.params.id).title.then(function(titleResult) {
+        console.log(titleResult);
+        res.render('thread', {
+          comments: result,
+          title: titleResult
+        });
+      });
+    });
+  });
+
+  // render comments in JSON for testing
+  app.get('/thread/:id/json', function(req, res) {
+    r.getSubmission(req.params.id).comments.then(function(result) {
+      r.getSubmission(req.params.id).title.then(function(titleResult) {
+        console.log(titleResult);
+        res.json(result);
+      });
     });
   });
 
