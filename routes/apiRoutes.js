@@ -48,6 +48,7 @@ module.exports = function(app) {
     r.getSubmission(req.params.id).comments.then(function(result) {
       r.getSubmission(req.params.id).title.then(function(titleResult) {
         console.log(titleResult);
+        console.log(result[0].subreddit)
         res.json(result);
       });
     });

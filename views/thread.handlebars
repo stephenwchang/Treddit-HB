@@ -1,15 +1,165 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
+      <div class="col">
         <h2>Treddit</h2>
 
         <h3>{{title}}</h3>
-          {{#each comments}}
-          <div>
-            {{{this.body_html}}}
+      {{#each comments}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
           </div>
-          {{/each}}
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+      {{#each this.replies}}
+          <div class="comment-string depth-{{this.depth}}">
+            <div class="row">
+              <div class="col-4 comment-author">
+                {{this.author.name}}
+              </div>
+              <div class="col-4">
+                <a>{{this.score}}</a>
+              </div>
+              <div class="col-4">
+                <a>{{this.created}}</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>{{{this.body_html}}}</p>
+              </div>
+            </div>
+          </div>
+      {{#if this.replies}}
+          <a href="https://old.reddit.com{{this.permalink}}" class="more-replies">More Replies</a>
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
       </div>
     </div>
   </div>
@@ -17,3 +167,6 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+<script>
+
+</script>
