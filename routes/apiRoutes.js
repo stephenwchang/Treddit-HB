@@ -54,10 +54,11 @@ module.exports = function(app) {
     });
   });
 
-  // Delete an example by id
-  app.delete('/api/examples/:id', function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // test route
+  app.get('/getsubmission/:id', function(req, res) {
+    r.getSubmission(req.params.id).body.then(function(result) {
+      res.json(result);
     });
   });
+
 };
