@@ -18,7 +18,6 @@
           url: `/thread/${id}/json`
          }).done(function(resp) {
           var data = { comments: resp };
-          console.log('second part set timeout')
           if (templates['thread'] === undefined) {
             $.ajax({
               type: 'GET',
